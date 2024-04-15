@@ -3,7 +3,7 @@ version: 'v2.26.1-desktop.1'
 services:
 
   currency-exchange-service:
-    image: mytech/mmv3-currency-exchange-service:0.0.1-SNAPSHOT
+    image: maycem/mmv3-currency-exchange-service:0.0.1-SNAPSHOT
     mem_limit: 700m
     ports:
       - "8000:8000"
@@ -16,7 +16,7 @@ services:
       MANAGEMENT.ZIPKIN.TRACING.ENDPOINT: http://zipkin-server:9411/api/v2/spans
 
   currency-conversion-service:
-    image: mytech/mmv3-currency-conversion-service:0.0.1-SNAPSHOT
+    image: maycem/mmv3-currency-conversion-service:0.0.1-SNAPSHOT
     mem_limit: 700m
     ports:
       - "8100:8100"
@@ -29,7 +29,7 @@ services:
       MANAGEMENT.ZIPKIN.TRACING.ENDPOINT: http://zipkin-server:9411/api/v2/spans
 
   api-gateway:
-    image: mytech/mmv3-api-gateway:0.0.1-SNAPSHOT
+    image: maycem/mmv3-api-gateway:0.0.1-SNAPSHOT
     mem_limit: 700m
     ports:
       - "8765:8765"
@@ -42,7 +42,7 @@ services:
       MANAGEMENT.ZIPKIN.TRACING.ENDPOINT: http://zipkin-server:9411/api/v2/spans
 
   naming-server:
-    image: mytech/mmv3-naming-server:0.0.1-SNAPSHOT
+    image: maycem/mmv3-naming-server:0.0.1-SNAPSHOT
     mem_limit: 700m
     ports:
       - "8761:8761"
