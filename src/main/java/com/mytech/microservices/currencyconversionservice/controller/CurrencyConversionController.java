@@ -1,5 +1,7 @@
 package com.mytech.microservices.currencyconversionservice.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import com.mytech.microservices.currencyconversionservice.CurrencyExchangeServiceProxy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.client.RestTemplateBuilder;
@@ -28,6 +30,7 @@ class RestTemplateConfiguration {
 @RestController
 public class CurrencyConversionController {
 
+    private Logger logger = LoggerFactory.getLogger(CurrencyConversionController.class);
     @Autowired
     private RestTemplate restTemplate;
 
@@ -38,6 +41,9 @@ public class CurrencyConversionController {
     public CurrencyConversionBean convertCurrency(@PathVariable String from,
                                                   @PathVariable String to,
                                                   @PathVariable BigDecimal quantity) {
+
+        //CHANGE-KUBERNETES
+        logger.info("calculateCurrencyConversion called with {} to {} with {}", from, to, quantity);
 
         //Feign - Problem 1
         Map<String, String> uriVariables = new HashMap<>();
@@ -62,6 +68,9 @@ public class CurrencyConversionController {
     public CurrencyConversionBean convertCurrencyFeign(@PathVariable String from,
                                                        @PathVariable String to,
                                                        @PathVariable BigDecimal quantity) {
+
+        //CHANGE-KUBERNETES
+        logger.info("calculateCurrencyConversionFeign called with {} to {} with {}", from, to, quantity);
 
         CurrencyConversionBean response = proxy.retrieveExchangeValue(from, to);
 

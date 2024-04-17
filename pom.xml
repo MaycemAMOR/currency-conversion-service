@@ -10,8 +10,8 @@
     </parent>
     <groupId>com.mytech.microservices</groupId>
     <artifactId>currency-conversion-service</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>currency-conversion-service</name>
+    <version>0.0.11-SNAPSHOT</version> <!-- CHANGE-KUBERNNETES -->
+    <name>currency-conversion-service-kubernetes</name> <!-- CHANGE-KUBERNNETES -->
     <description>Demo project for Spring Boot</description>
     <properties>
         <java.version>21</java.version>
@@ -26,14 +26,16 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-config</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-        </dependency>
+
+        <!-- CHANGE-KUBERNNETES -->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.cloud</groupId>-->
+<!--            <artifactId>spring-cloud-starter-config</artifactId>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.cloud</groupId>-->
+<!--            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>-->
+<!--        </dependency>-->
 
         <dependency>
             <groupId>io.micrometer</groupId>
@@ -56,14 +58,15 @@
         </dependency>
 
 
-        <!-- OPTION 1: Open Telemetry as Bridge (RECOMMENDED) -->
-        <!-- Open Telemetry
-            - Simplified Observability (metrics, logs, and traces) -->
+        <!-- CHANGE-KUBERNNETES -->
+<!--        &lt;!&ndash; OPTION 1: Open Telemetry as Bridge (RECOMMENDED) &ndash;&gt;-->
+<!--        &lt;!&ndash; Open Telemetry-->
+<!--            - Simplified Observability (metrics, logs, and traces) &ndash;&gt;-->
 
-        <dependency>
-            <groupId>io.opentelemetry</groupId>
-            <artifactId>opentelemetry-exporter-zipkin</artifactId>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>io.opentelemetry</groupId>-->
+<!--            <artifactId>opentelemetry-exporter-zipkin</artifactId>-->
+<!--        </dependency>-->
 
 
         <dependency>
