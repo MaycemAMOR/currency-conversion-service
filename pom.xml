@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.mytech.microservices</groupId>
     <artifactId>currency-conversion-service</artifactId>
-    <version>0.0.11-SNAPSHOT</version> <!-- CHANGE-KUBERNNETES -->
+    <version>0.0.12-SNAPSHOT</version> <!-- CHANGE-KUBERNNETES -->
     <name>currency-conversion-service-kubernetes</name> <!-- CHANGE-KUBERNNETES -->
     <description>Demo project for Spring Boot</description>
     <properties>

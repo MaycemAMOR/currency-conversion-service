@@ -10,7 +10,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 //@FeignClient(name = "currency-exchange-service")  // ==> dans le cas de load balancer activer avec eureka
 
 //CHANGE-KUBERNETES
-@FeignClient(name = "currency-exchange", url = "${CURRENCY_EXCHANGE_SERVICE_HOST:http://localhost}:8000")
+//@FeignClient(name = "currency-exchange", url = "${CURRENCY_EXCHANGE_SERVICE_HOST:http://localhost}:8000")
+@FeignClient(name = "currency-exchange", url = "${CURRENCY_EXCHANGE_URI:http://localhost}:8000")
 public interface CurrencyExchangeServiceProxy {
 
     @GetMapping("/currency-exchange/from/{from}/to/{to}")
